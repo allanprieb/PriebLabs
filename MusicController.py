@@ -57,7 +57,7 @@ class MusicController:
 
         self.PINK = (255, 192, 203) #	r: 255, g: 192, b: 203
 
-        self.instruments= ["Violin", " Bass ", "Organ!"]
+        self._instruments= ["Violin", " Bass ", "Organ!"]
 
         # self._timer = SoftwareTimer(None)
         
@@ -130,19 +130,19 @@ class MusicController:
     def changeInstrument(self):
         if self._instrumentno == 0:
             Log.d('Violin Playing')
-            instrumentName = self.instruments[self._instrumentno]
+            instrumentName = self._instruments[self._instrumentno]
             self._display.showText(f"{instrumentName}", 0, 5)
             self._instrument = Violin()
             self._instrumentno = 1
         elif self._instrumentno == 1:
             Log.d('Bass Playing')
-            instrumentName = self.instruments[self._instrumentno]
+            instrumentName = self._instruments[self._instrumentno]
             self._display.showText(f"{instrumentName}", 0, 5)
             self._instrument = Bass()
             self._instrumentno = 2
         else:
             Log.d('Organ Playing')
-            instrumentName = self.instruments[self._instrumentno]
+            instrumentName = self._instruments[self._instrumentno]
             self._display.showText(f"{instrumentName}", 0, 5)
             self._instrument = Organ()
             self._instrumentno = 0

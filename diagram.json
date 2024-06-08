@@ -8,7 +8,7 @@
       "id": "pico",
       "top": -37.5,
       "left": -0.25,
-      "rotate": -90,
+      "rotate": 270,
       "attrs": { "env": "micropython-20231227-v1.22.0" }
     },
     {
@@ -44,54 +44,94 @@
       "attrs": { "color": "blue", "bounce": "0", "key": "f" }
     },
     {
-      "type": "wokwi-buzzer",
-      "id": "bz1",
-      "top": -45.6,
-      "left": 376.2,
-      "attrs": { "volume": "0.1" }
-    },
-    {
       "type": "wokwi-pushbutton",
       "id": "btn5",
-      "top": 179,
-      "left": -115.2,
+      "top": 181.8,
+      "left": 310.2,
+      "rotate": 90,
       "attrs": { "color": "black", "bounce": "0", "key": "q" }
     },
     {
       "type": "wokwi-lcd1602",
       "id": "lcd1",
-      "top": -233.6,
+      "top": -272,
       "left": -100,
       "attrs": { "pins": "i2c" }
     },
     {
-      "type": "wokwi-led-ring",
-      "id": "ring1",
-      "top": -248.96,
-      "left": 356.39,
-      "attrs": { "pixels": "16" }
-    }
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -212.2,
+      "left": 414.6,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 316.8,
+      "left": -54.82,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 263.8, "left": 52.04, "rotate": 90, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 259.2,
+      "left": -192,
+      "rotate": 180,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": -287.24, "left": -259.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": -286.6, "left": -221, "rotate": 180, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -83.2,
+      "left": -229.6,
+      "attrs": {}
+    },
+    { "type": "wokwi-vcc", "id": "vcc3", "top": -95.24, "left": -9.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd3", "top": -75.9, "left": 46.9, "rotate": 270, "attrs": {} },
+    {
+      "type": "wokwi-gnd",
+      "id": "gnd4",
+      "top": -113.8,
+      "left": 345.4,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-vcc", "id": "vcc4", "top": -72, "left": 322.56, "rotate": 270, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd5", "top": 278.4, "left": 172.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd6", "top": 307.2, "left": -87, "attrs": {} }
   ],
   "connections": [
-    [ "pico:GND.5", "bz1:1", "black", [ "v-20.4", "h105.6", "v9.6" ] ],
-    [ "pico:GND.4", "btn1:1.l", "black", [ "v0" ] ],
-    [ "btn1:1.l", "btn2:1.l", "black", [ "v-28.8", "h67.2" ] ],
-    [ "btn2:1.l", "btn3:1.l", "black", [ "v-28.8", "h57.6" ] ],
-    [ "btn3:1.l", "btn4:1.l", "black", [ "v-28.8", "h67.2" ] ],
-    [ "pico:GND.3", "btn5:2.r", "black", [ "v57.6", "h-86.4", "v57.6" ] ],
-    [ "btn1:2.l", "pico:GP15", "white", [ "v-96", "h57.4" ] ],
-    [ "btn4:2.l", "pico:GP17", "blue", [ "v0" ] ],
-    [ "bz1:2", "pico:GP13", "magenta", [ "v0" ] ],
-    [ "btn2:2.l", "pico:GP14", "red", [ "v0" ] ],
-    [ "btn3:2.l", "pico:GP16", "gold", [ "v0" ] ],
-    [ "btn5:1.l", "pico:GP18", "gray", [ "v-182.4", "h220.8" ] ],
-    [ "lcd1:GND", "pico:GND.8", "black", [ "h-67.2", "v231.6" ] ],
-    [ "lcd1:VCC", "pico:3V3", "red", [ "h-48", "v134.5", "h134.4" ] ],
+    [ "btn4:2.l", "pico:GP17", "blue", [ "v-163.2", "h-144.2" ] ],
+    [ "btn3:2.l", "pico:GP16", "gold", [ "v-144", "h-67.4" ] ],
+    [ "btn5:1.l", "pico:GP18", "gray", [ "v-182.4", "h-249.6" ] ],
     [ "lcd1:SDA", "pico:GP0", "#8f4814", [ "h-201.6", "v269" ] ],
     [ "lcd1:SCL", "pico:GP1", "violet", [ "h-163.2", "v240.3", "h115.2" ] ],
-    [ "ring1:GND", "pico:GND.5", "black", [ "v19.2", "h-297.6" ] ],
-    [ "ring1:VCC", "pico:3V3", "red", [ "v48", "h-432" ] ],
-    [ "ring1:DIN", "pico:GP20", "green", [ "v28.8", "h-345.6" ] ]
+    [ "pir1:VCC", "vcc1:VCC", "red", [ "v0" ] ],
+    [ "lcd1:GND", "gnd2:GND", "black", [ "h-28.8", "v-76.8" ] ],
+    [ "vcc2:VCC", "lcd1:VCC", "red", [ "v0" ] ],
+    [ "ldr1:VCC", "vcc3:VCC", "red", [ "h0" ] ],
+    [ "gnd3:GND", "ldr1:GND", "black", [ "h-9.6", "v19.6" ] ],
+    [ "btn1:1.r", "gnd5:GND", "black", [ "v0" ] ],
+    [ "btn2:1.r", "gnd5:GND", "black", [ "v0" ] ],
+    [ "btn3:2.r", "gnd5:GND", "black", [ "v0" ] ],
+    [ "btn4:2.r", "gnd5:GND", "black", [ "v0" ] ],
+    [ "bz1:1", "gnd6:GND", "black", [ "h67.2", "v48" ] ],
+    [ "pir1:GND", "gnd6:GND", "black", [ "v0" ] ],
+    [ "bz1:2", "pico:GP7", "yellow", [ "v-38.4", "h192.4", "v-124.8" ] ],
+    [ "pir1:OUT", "pico:GP8", "limegreen", [ "h0.14", "v-67.2", "h57.6" ] ],
+    [ "gnd5:GND", "btn5:2.r", "black", [ "h153.6", "v0", "h19.4" ] ],
+    [ "btn2:2.l", "pico:GP15", "red", [ "v0" ] ],
+    [ "btn1:1.l", "pico:GP14", "white", [ "v-28.8", "h28.8" ] ],
+    [ "servo1:PWM", "pico:GP20", "green", [ "v28.8", "h-412.6" ] ],
+    [ "pico:GP21", "ldr1:DO", "cyan", [ "v0" ] ],
+    [ "servo1:V+", "vcc4:VCC", "red", [ "v0" ] ],
+    [ "gnd4:GND", "servo1:GND", "black", [ "v0" ] ]
   ],
   "dependencies": {}
 }
