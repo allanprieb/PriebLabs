@@ -119,3 +119,4 @@ class ClockController:
             self._buzzer.stop()
             time.sleep(0.1)
 
+
